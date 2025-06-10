@@ -1,0 +1,235 @@
+
+
+#menu ul {
+	display: flex;
+    padding: 16px 14px;
+    margin: 5px 5px;
+
+}
+#menu li{
+	font-size: 20px;
+     padding: 16px 14px;
+    margin: 5px 5px;
+    font-family: "Alumni Sans SC", sans-serif;
+    border: 2px inset skyblue;
+    border-radius: 5px;
+    list-style: none;
+    
+}
+#menu a{
+	text-decoration: none;
+	color: black;
+}
+#menu li:hover{
+	cursor: pointer;
+	background-color: papayawhip;
+
+}
+#menu{
+	display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 14px;
+    margin: 5px 5px;
+    background-color: peachpuff;
+	border: 5px inset skyblue;
+}
+
+#menu img{
+	width: 100px; height: 100px;
+}
+#Home{
+	display: flex;
+	font-size: 125px;
+	padding: 16px 14px;
+	margin: 5px 5px;
+	border-radius: 20px;
+	background-color: peachpuff;
+	border: 5px inset skyblue;
+}
+#Home span{
+	background-color: peachpuff;
+font-family: "Dancing Script", cursive;
+border-radius: 20px;
+  
+}
+#AboutMe h1{
+font-family: "Alumni Sans SC", sans-serif;
+}
+#AboutMe{
+	background-color: peachpuff;
+	border: 5px inset skyblue;
+	padding: 20px 50px;
+}
+#AboutMe p{
+	margin: 0 auto;
+	width: 600px;
+	border-right: 5px solid darkred;
+	border-left: 5px solid darkred;
+	border-radius: 10px;
+	padding: 20px 50px;
+	font-family: "Exo 2", sans-serif;
+}
+#Academics{
+	background-color: peachpuff;
+	border: 5px inset skyblue;
+	padding: 50px 50px;
+}
+#Academics h1{
+	font-family: "Alumni Sans SC", sans-serif;
+}
+#Academics h2{
+	font-family: "Alumni Sans SC", sans-serif;
+}
+
+#Academics table td{
+	border-left: 2px dashed darkred;
+	border-right: 2px dashed darkred;
+	border-top: 2px dashed darkred;
+	border-bottom: 2px dashed darkred;
+	padding: 50px 14px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+#Academics a{
+	padding:16px 14px; 
+	background-color:#4CAF50; 
+	color:white; 
+	text-decoration:none; 
+	border-radius:5px;"
+}
+#Showcase{
+	background-color: peachpuff;
+	border: 5px inset skyblue;
+}
+#Showcase h1{
+	font-family: "Alumni Sans SC", sans-serif;
+}
+
+#Showcase table img{
+	height: 80px;
+	width: 80px;
+	padding: 16px 14px;
+}
+
+#Showcase table td{
+	padding: 16px 14px;
+    
+}
+#ContactMe h5{
+font-family: "Alumni Sans SC", sans-serif;
+}
+#ContactMe h1{
+font-family: "Alumni Sans SC", sans-serif;
+}
+#ContactMe{
+	background-color: peachpuff;
+	border: 5px inset skyblue;
+padding: 30px 14px;
+}
+
+#ContactMe table{
+	font-size: 20px;
+padding: 30px 14px;
+margin: 0 auto;
+background-color: whitesmoke;
+border: 2px solid black;
+	width: 1000px;
+list-style: none;
+}
+
+#ContactMe table img{
+	margin: 10px;
+	width: 80px;
+	height: 80px;
+}
+
+#ContactMe img:hover{
+	cursor: pointer;
+	background-color: skyblue;
+	
+}
+#login {
+	display: flex;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color: peachpuff;
+	border: 5px inset skyblue;
+	padding: 30px 14px;
+}
+
+#login div{
+	align: center;
+	border: 2px solid darkred;
+	border-radius: 20px;
+	padding: 16px 14px;
+	margin: 0 auto;
+
+}
+
+#login form{
+	border: 5px solid skyblue;
+	border-radius: 15px;
+	padding: 16px 14px;
+}
+
+#login input{
+	border-color: darkred; 
+	background-color: transparent; 
+	border-radius: 20px;
+	width: 250px;
+	height: 50px;
+}
+#login h1{
+	font-family: "Alumni Sans SC", sans-serif;
+
+}
+
+#Comment-section h1{
+	font-family: "Alumni Sans SC", sans-serif;
+	align: center;
+}
+
+#Comment-section h2{
+	font-family: "Alumni Sans SC", sans-serif;
+
+}
+
+#Comment-section{
+	display: flex;
+	    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    padding: 16px 14px;
+    background-color: peachpuff;
+	border: 5px inset skyblue;
+padding: 30px 14px;
+}
+
+#Comment-section input{
+	align: center;
+	border: 2px solid skyblue;
+	height: 30px;
+	width: 300px;
+	border-radius: 20px;
+	 background-color: peachpuff;
+}
+#Comment-section form{
+	padding: 10px 80px;
+	align: center;
+	border: 2px solid darkred;
+	border-radius: 20px;
+}
+#commentList{
+    padding: 10px 100px;
+	align: center;
+	border: 2px solid darkred;
+	border-radius: 20px;
+}

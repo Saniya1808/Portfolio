@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+
+	<link rel="icon" type="image/jpeg" href="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\Portfolio.png">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Portfolio.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div id="menu">
+		<span><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\sanulogo.png"></span>
+		<span><ul>
+			   <li><a href="Home.html"> Home</li>
+			   <li><a href="AboutMe.html"> About me</li>
+			   <li><a href="Academics.html"> Academics</li>
+			   <li><a href="Showcase.html"> Showcase</li>
+			   <li><a href="ContactMe"> Contact me</li>
+			   <li><a href="login.html"> Login</li></a>
+			</ul>
+		</span>
+	</div>
+<div id="ContactMe" align="center">
+    	<h1>Contact Me</h1>
+    	<span><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1905.1097858101612!2d74.18015258838813!3d17.25660895737602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc182e539b08e8b%3A0x8370ea2f0f05dc0f!2sAhilya%20Nagar%2C%20Malkapur%2C%20Maharashtra%20415539!5e0!3m2!1sen!2sin!4v1749303559908!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+    	<br>
+    	<br> 
+    <table> 
+<tr>
+    <td><h5 align="center">Email</h5><a href="mailto:manersaniya994@gmail.com" target="_blank"><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\mail.png" alt="Gmail" > </a></td>
+    <td><h5 align="center">Linkedin</h5><a href="https://www.linkedin.com/in/saniya-maner-633a882b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\l.png" alt="Linkedin" > </a></td>
+    <td><h5 align="center">Github</h5><a href="https://github.com/Saniya1808" target="_blank"><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\github.png" alt="Github"> </a></td>
+    <td><h5 align="center">Instagram</h5><a href="https://www.instagram.com/saniya_maner.1808?igsh=anQ5c2x1cjlrYTFn" target="_blank"><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\insta.png" alt="Instagram"> </a></td>
+    <td><h5 align="center">X</h5><a href="https://x.com/saniya_man43651?t=fVzKGIfXfTyX-EsntP-ZIA&s=09" target="_blank"><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\x.png" alt="X"> </a></td>
+    <td><h5 align="center">Whatsapp</h5><a href="https://wa.me/919373861850" target="_blank"><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\wp.png" alt="Whatsapp"> </a></td>
+</tr>
+    </table>  
+</div>
+<div id="Comment-section">
+    	<h1 align="center">Comment Section</h1>
+    	<div>
+    		<form method="POST" onsubmit="postcomment(); return false;">
+    			<h2>Leave your Comment</h2>
+   <input type="text" name="Name" placeholder="Enter your name" id="Name"><br><br>
+   <input id="message" placeholder="Write your message..." required><br><br>
+   <input type="file" id="photo" accept="image/*"><br><br>
+   <input type="submit" name="Post comment" value="Post comment"style="border-color: darkred; background-color: lightgreen; border-radius: 20px;width: 150px;">
+            </form>
+
+    	</div>
+
+    	<div>
+    		<h2>Comments</h2>
+    	<div id="commentList">
+            
+        </div>	
+    		   
+    	</div>
+    </div>  
+
+<script>
+  
+  window.onload = function () {
+    loadComments();
+  };
+
+  function postcomment() {
+    const name = document.getElementById("Name").value;
+    const message = document.getElementById("message").value;
+    const photo = document.getElementById("photo").files[0];
+
+    if (!name || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    if (photo) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imageData = e.target.result;
+        saveComment(name, message, imageData);
+      };
+      reader.readAsDataURL(photo);
+    } else {
+      saveComment(name, message, null);
+    }
+  }
+
+  function saveComment(name, message, imageData) {
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    const newComment = {
+      name: name,
+      message: message,
+      image: imageData,  // base64 image
+      time: new Date().toLocaleString()
+    };
+
+    comments.push(newComment);
+    localStorage.setItem("comments", JSON.stringify(comments));
+    loadComments();
+
+    // Clear form
+    document.getElementById("Name").value = "";
+    document.getElementById("message").value = "";
+    document.getElementById("photo").value = "";
+  }
+
+  function loadComments() {
+    const commentList = document.getElementById("commentList");
+    commentList.innerHTML = "";
+
+    const comments = JSON.parse(localStorage.getItem("comments")) || [];
+
+    comments.forEach(comment => {
+      const div = document.createElement("div");
+      div.style.border = "1px solid gray";
+      div.style.margin = "10px 0";
+      div.style.padding = "10px";
+      div.style.background = "#f0f0f0";
+      div.style.borderRadius = "10px";
+      div.style.display = "flex";
+      div.style.alignItems = "center";
+      div.style.gap = "15px";
+
+      const profileImg = document.createElement("img");
+      profileImg.src = comment.image || "https://via.placeholder.com/50";
+      profileImg.alt = "Profile";
+      profileImg.style.width = "50px";
+      profileImg.style.height = "50px";
+      profileImg.style.borderRadius = "50%";
+      profileImg.style.objectFit = "cover";
+
+      const content = document.createElement("div");
+      content.innerHTML = `<strong>${comment.name}</strong><br>${comment.message}<br><small>${comment.time}</small>`;
+
+      div.appendChild(profileImg);
+      div.appendChild(content);
+
+      commentList.appendChild(div);
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+
+	<link rel="icon" type="image/jpeg" href="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\Portfolio.png">
+
+	<link rel="stylesheet" type="text/css" href="Portfolio.css">
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div id="menu">
+		<span><img src="C:\Users\Admin\OneDrive\Desktop\Web development workshop (pawan sir) TCS\Portfolio\images\sanulogo.png"></span>
+		<span><ul>
+			   <li><a href="Home.html"> Home</li>
+			   <li><a href="AboutMe.html"> About me</li>
+			   <li><a href="Academics.html"> Academics</li>
+			   <li><a href="Showcase.html"> Showcase</li>
+			   <li><a href="ContactMe.html"> Contact me</li>
+			   <li><a href="login.html"> Login</li></a>
+			</ul>
+		</span>
+	</div>
+    
+    <div id="login">
+    	<div><h1>Register</h1>
+    		<form method="POST" onsubmit="register(); return false">
+   <input type="text" name="Name" placeholder="Enter your name" id="Name"><br><br>
+   <input type="username" name="username" placeholder="Enter username" id="UserName"><br><br>
+   <input type="password" name="password" placeholder="Enter your password" id="Password"><br><br>
+   <input type="submit" name="Register" value="Register"style="border-color: darkred; background-color: lightgreen; border-radius: 20px;width: 150px;">
+   <input type="reset" name="Reset" value="Reset"style="border-color: darkred; background-color: lightgreen; border-radius: 20px;width: 150px;">
+   </form>
+
+    	</div>
+
+    	<div><h1>Login</h1>
+<form onsubmit="login(); return false;">
+      <input type="text" id="userName" placeholder="Enter username"><br><br>
+      <input type="password" id="passWord" placeholder="Enter your password"><br><br>
+      <input type="submit" value="Login" style="border-color: darkred; background-color: lightgreen; border-radius: 20px; width: 150px;">
+      <input type="reset" value="Reset" style="border-color: darkred; background-color: lightgreen; border-radius: 20px; width: 150px;">
+    </form>
+    	</div>
+    </div>
+
+<script>
+	function register(){
+        debugger;
+		var name=document.getElementById('Name').value;
+		var uname=document.getElementById('UserName').value;
+		var pass=document.getElementById('Password').value;
+
+		localStorage.setItem('Name',name);
+		localStorage.setItem('UserName',uname);
+		localStorage.setItem('Password',pass);
+
+		alert("Register Successfully");
+	}
+
+	function login(){
+	debugger;
+	var u = document.getElementById('userName').value;
+	var p = document.getElementById('passWord').value;
+
+	var localusername = localStorage.getItem("UserName");
+	var localpassword = localStorage.getItem("Password");
+
+	if(u === localusername && p === localpassword){
+		alert("Login success");
+	} else {
+		alert("Incorrect data");
+	}
+}
+
+</script>    
+</body>
+</html>    
